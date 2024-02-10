@@ -13,6 +13,9 @@ DISTRIBUTION = [
 
 
 class Deck:
+    """
+    Class representing a deck of cards.
+    """
 
     _deck: list[Card] = []
 

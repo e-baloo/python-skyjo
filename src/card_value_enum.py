@@ -4,6 +4,10 @@ from enum import Enum
 
 
 class CardValueEnum(Enum):
+    """
+    Enum class for card values.
+    """
+
     NEGATIVE_TOW = -2
     NEGATIVE_ONE = -1
     ZERO = 0

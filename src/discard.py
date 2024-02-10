@@ -5,6 +5,9 @@ from card_status_enum import CardStatusEnum
 
 
 class Discard:
+    """
+    Class representing the discard pile.
+    """
 
     _discard: list[Card] = []
 

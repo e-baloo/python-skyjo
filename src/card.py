@@ -5,6 +5,9 @@ from card_status_enum import CardStatusEnum
 
 
 class Card:
+    """
+    Class representing a card.
+    """
 
     _value: CardValueEnum = None
     _status: CardStatusEnum = CardStatusEnum.HIDDEN
