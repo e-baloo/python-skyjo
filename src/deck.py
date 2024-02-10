@@ -1,11 +1,12 @@
-from card_ import Card
+from card import Card
 from card_value_enum import CardValueEnum
-from card_status_enum import CardStatusEnum   
+from card_status_enum import CardStatusEnum
 
 DISTRIBUTION = [
     [5, [CardValueEnum.NEGATIVE_TOW]],
     [15, [CardValueEnum.ZERO]],
-    [10, [CardValueEnum.NEGATIVE_ONE, CardValueEnum.ONE, CardValueEnum.TWO, CardValueEnum.THREE, CardValueEnum.FOUR, CardValueEnum.FIVE, CardValueEnum.SIX, CardValueEnum.SEVEN, CardValueEnum.EIGHT, CardValueEnum.NINE, CardValueEnum.TEN, CardValueEnum.ELEVEN, CardValueEnum.TWELVE]],
+    [10, [CardValueEnum.NEGATIVE_ONE, CardValueEnum.ONE, CardValueEnum.TWO, CardValueEnum.THREE, CardValueEnum.FOUR, CardValueEnum.FIVE,
+          CardValueEnum.SIX, CardValueEnum.SEVEN, CardValueEnum.EIGHT, CardValueEnum.NINE, CardValueEnum.TEN, CardValueEnum.ELEVEN, CardValueEnum.TWELVE]],
 ]
 
 
@@ -37,9 +38,10 @@ class Deck:
     def clear(self):
         self._deck = []
         for (count, values) in DISTRIBUTION:
-                    for _ in range(count):
-                        for value in values:
-                            self._deck.append(Card(value=value, status=CardStatusEnum.HIDDEN))
+            for _ in range(count):
+                for value in values:
+                    self._deck.append(
+                        Card(value=value, status=CardStatusEnum.HIDDEN))
 
     def count(self):
         return len(self._deck)

@@ -1,5 +1,6 @@
-from Card import Card
+from card import Card
 from card_status_enum import CardStatusEnum
+
 
 class Discard:
 
@@ -23,4 +24,3 @@ class Discard:
 
     def __str__(self):
         return str(self.last())
-

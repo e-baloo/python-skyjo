@@ -1,7 +1,8 @@
 from ast import Tuple
-from card_ import Card
+from card import Card
 from card_status_enum import CardStatusEnum
-from discard_ import Discard
+from discard import Discard
+
 
 class PlayerBoard:
 
@@ -21,13 +22,13 @@ class PlayerBoard:
             else:
                 return str(card)
 
-
-        dis = "" 
+        dis = ""
         for i in range(3):
-            dis += " | ".join([card_to_str(self._board[j][i]) for j in range(4)]) + "\n"
+            dis += " | ".join([card_to_str(self._board[j][i])
+                              for j in range(4)]) + "\n"
 
         return dis
-    
+
     def append(self, card: Card) -> bool:
         for j in range(4):
             for i in range(3):
@@ -35,9 +36,9 @@ class PlayerBoard:
                     self._board[j][i] = card
                     return True
         return False
-    
+
     def sum(self):
-        sum = 0 
+        sum = 0
         for j in range(4):
             for i in range(3):
                 if self._board[j][i] is not None:
@@ -51,14 +52,13 @@ class PlayerBoard:
                 self._board[x][y].status = CardStatusEnum.VISIBLE
                 return False
         return True
-    
+
     def swap(self, card: Card, x, y) -> Tuple[bool, Card]:
         if self._board[x][y] is None:
             return (False, card)
-        
+
         self._board[x][y], card = card, self._board[x][y]
         return (True, card)
-        
 
     def skyjo(self, discard: Discard) -> bool:
 
@@ -80,7 +80,7 @@ class PlayerBoard:
                     return_skyjo = True
 
         return return_skyjo
-    
+
     def finish_playing(self) -> bool:
         for x in range(4):
             for y in range(3):
@@ -88,4 +88,3 @@ class PlayerBoard:
                     if self._board[x][y].status == CardStatusEnum.HIDDEN:
                         return False
         return True
-

@@ -1,7 +1,8 @@
 from card_value_enum import CardValueEnum
 from card_status_enum import CardStatusEnum
 
-class Card :
+
+class Card:
 
     _value: CardValueEnum = None
     _status: CardStatusEnum = CardStatusEnum.HIDDEN
@@ -23,13 +24,13 @@ class Card :
     @property
     def value(self) -> int:
         return self._value.value
-    
+
     @property
     def status(self) -> CardStatusEnum:
         return self._status
-    
+
     @status.setter
-    def status(self, status: CardStatusEnum ):
+    def status(self, status: CardStatusEnum):
         self._status = status
 
     def reveal(self):
