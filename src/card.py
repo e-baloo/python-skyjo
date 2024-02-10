@@ -28,10 +28,12 @@ class Card:
 
     @property
     def value(self) -> int:
+        """The value of the card."""
         return self._value.value
 
     @property
     def status(self) -> CardStatusEnum:
+        """The status of the card."""
         return self._status
 
     @status.setter
@@ -39,4 +41,5 @@ class Card:
         self._status = status
 
     def reveal(self):
+        """Reveals the card."""
         self._status = CardStatusEnum.VISIBLE

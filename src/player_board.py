@@ -1,6 +1,5 @@
 """Module providing class PlayerBoard."""
 
-from ast import Tuple
 from card import Card
 from card_status_enum import CardStatusEnum
 from discard import Discard
@@ -10,32 +9,17 @@ class PlayerBoard:
     """
     Represents the player's board in the Skyjo game.
 
-    The player board is a 4x3 grid where cards can be placed. It provides methods for managing the cards on the board,
-    such as appending cards, revealing cards, swapping cards, checking for Skyjo combinations, and checking if the board
-    is finished.
+    The player board is a 4x3 grid where cards can be placed. It provides methods for managing the
+    cards on the board, such as appending cards, revealing cards, swapping cards, checking for 
+    Skyjo combinations, and checking if the board is finished.
 
     Attributes:
         _board (list[list[Card | None]]): The 4x3 grid representing the player board.
-
-    Methods:
-        __init__: Initializes the player board by calling the clear method.
-        clear: Clears the player board by setting all positions to None.
-        __str__: Returns a string representation of the player board.
-        append: Appends a card to the player board.
-        sum: Calculates the sum of the visible cards on the player board.
-        reveal: Reveals a card at the specified position on the board.
-        swap: Swaps a card with the card at the specified position on the board.
-        skyjo: Checks if there is a valid Skyjo combination on the player's board.
-        finish: Checks if the player board is finished.
     """
-    _board = []
+    _board: list[list[Card | None]] = []
 
     def __init__(self):
         self.clear()
-
-    def clear(self):
-        """Clear the player board by setting all positions to None."""
-        self._board = [[None for _ in range(3)] for _ in range(4)]
 
     def __str__(self):
 
@@ -50,6 +34,10 @@ class PlayerBoard:
                                       for j in range(4)]) + "\n"
 
         return return_str
+
+    def clear(self):
+        """Clear the player board by setting all positions to None."""
+        self._board = [[None for _ in range(3)] for _ in range(4)]
 
     def append(self, card: Card) -> bool:
         """Append a card to the player board."""
@@ -88,7 +76,7 @@ class PlayerBoard:
                 return False
         return True
 
-    def swap(self, card: Card, x: int, y: int) -> Tuple[bool, Card]:
+    def swap(self, card: Card, x: int, y: int) -> (bool, Card):
         """
         Swaps the given card with the card at the specified position on the board.
 
@@ -98,8 +86,8 @@ class PlayerBoard:
             y (int): The y-coordinate of the position.
 
         Returns:
-            Tuple[bool, Card]: A tuple containing a boolean value indicating whether the swap was successful
-            and the card that was previously at the specified position.
+            Tuple (bool, Card): A tuple containing a boolean value indicating whether the swap was
+            successful and the card that was previously at the specified position.
         """
         if self._board[x][y] is None:
             return (False, card)
@@ -109,13 +97,15 @@ class PlayerBoard:
 
     def skyjo(self, discard: Discard) -> bool:
         """
-        Checks if there is a valid Skyjo combination on the player's board and updates the discard pile accordingly.
+        Checks if there is a valid Skyjo combination on the player's board and updates the discard
+        pile accordingly.
 
         Args:
             discard (Discard): The discard pile to append the cards to.
 
         Returns:
-            bool: True if a Skyjo combination was found and cards were appended to the discard pile, False otherwise.
+            bool: True if a Skyjo combination was found and cards were appended to the discard pile, 
+            False otherwise.
         """
 
         def check_skyjo(cards: list[Card | None]) -> bool:
