@@ -1,4 +1,4 @@
-from card import Card
+from card_ import Card
 from card_value_enum import CardValueEnum
 from card_status_enum import CardStatusEnum   
 

@@ -1,8 +1,8 @@
-from card import Card
+from card_ import Card
 from card_value_enum import CardValueEnum
 from card_status_enum import CardStatusEnum
 from player_board import PlayerBoard
-from discard import Discard
+from discard_ import Discard
 
 discard = Discard()
 discard.append(Card(CardValueEnum.ONE))

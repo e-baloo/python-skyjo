@@ -1,7 +1,7 @@
 from ast import Tuple
-from card import Card
+from card_ import Card
 from card_status_enum import CardStatusEnum
-from discard import Discard
+from discard_ import Discard
 
 class PlayerBoard:
 
