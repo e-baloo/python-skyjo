@@ -33,3 +33,5 @@ class Card :
     def status(self, status: CardStatusEnum ):
         self._status = status
     
+    def reveal(self):
+        self._status = CardStatusEnum.VISIBLE

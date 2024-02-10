@@ -22,7 +22,7 @@ class Deck:
         for card in self._deck:
             card.status = CardStatusEnum.HIDDEN
 
-    def pop(self) -> Card:
+    def draw(self) -> Card:
         return self._deck.pop()
 
     def __str__(self):

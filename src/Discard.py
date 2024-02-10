@@ -12,11 +12,9 @@ class Discard:
         card.status = CardStatusEnum.VISIBLE
         self._discard.append(card)
 
-    def pop(self) -> Card:
+    def draw(self) -> Card:
         return self._discard.pop()
 
-    
-    
     def clear(self):
         self._discard = []
 
