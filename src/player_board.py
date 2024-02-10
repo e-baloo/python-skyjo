@@ -1,6 +1,7 @@
-from Card import Card
-from CardStatusEnum import CardStatusEnum
-from Discard import Discard
+from ast import Tuple
+from card import Card
+from card_status_enum import CardStatusEnum
+from discard import Discard
 
 class PlayerBoard:
 
@@ -51,7 +52,7 @@ class PlayerBoard:
                 return False
         return True
     
-    def swap(self, card: Card, x, y) -> (bool, Card):
+    def swap(self, card: Card, x, y) -> Tuple[bool, Card]:
         if self._board[x][y] is None:
             return (False, card)
         

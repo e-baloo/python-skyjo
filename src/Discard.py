@@ -1,5 +1,5 @@
 from Card import Card
-from CardStatusEnum import CardStatusEnum
+from card_status_enum import CardStatusEnum
 
 class Discard:
 

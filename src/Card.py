@@ -1,5 +1,5 @@
-from CardValueEnum import CardValueEnum 
-from CardStatusEnum import CardStatusEnum
+from card_value_enum import CardValueEnum
+from card_status_enum import CardStatusEnum
 
 class Card :
 
@@ -14,12 +14,11 @@ class Card :
         if isinstance(other, Card):
             return self._value == other._value
         return False
-    
+
     def __str__(self):
         if self._status == CardStatusEnum.VISIBLE:
             return f"{self._value.value:^6d}"
-        else:
-            return f"({self._value.value:^4d})"
+        return f"({self._value.value:^4d})"
 
     @property
     def value(self) -> int:
@@ -32,6 +31,6 @@ class Card :
     @status.setter
     def status(self, status: CardStatusEnum ):
         self._status = status
-    
+
     def reveal(self):
         self._status = CardStatusEnum.VISIBLE

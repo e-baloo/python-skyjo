@@ -1,6 +1,6 @@
-from Card import Card
-from CardValueEnum import CardValueEnum
-from CardStatusEnum import CardStatusEnum   
+from card import Card
+from card_value_enum import CardValueEnum
+from card_status_enum import CardStatusEnum   
 
 DISTRIBUTION = [
     [5, [CardValueEnum.NEGATIVE_TOW]],

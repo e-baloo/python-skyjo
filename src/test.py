@@ -1,10 +1,10 @@
 import random
-from Card import Card
-from CardValueEnum import CardValueEnum
-from CardStatusEnum import CardStatusEnum
-from Deck import Deck
-from PlayerBoard import PlayerBoard
-from Discard import Discard
+from card import Card
+from card_value_enum import CardValueEnum
+from card_status_enum import CardStatusEnum
+from deck import Deck
+from player_board import PlayerBoard
+from discard import Discard
 
 deck = Deck()
 discard = Discard()
