@@ -1,3 +1,5 @@
+"""Module providing class Discard."""
+
 from card import Card
 from card_status_enum import CardStatusEnum
 

@@ -1,3 +1,5 @@
+"""Module providing class PlayerBoard."""
+
 from ast import Tuple
 from card import Card
 from card_status_enum import CardStatusEnum

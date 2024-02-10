@@ -1,3 +1,5 @@
+"""Module providing enum CardStatusEnum."""
+
 from enum import Enum
 
 
