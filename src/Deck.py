@@ -19,15 +19,20 @@ class Deck:
     def shuffle(self):
         from random import shuffle
         shuffle(self._deck)
+        for card in self._deck:
+            card.status = CardStatusEnum.HIDDEN
 
     def pop(self) -> Card:
         return self._deck.pop()
 
     def __str__(self):
-        return str([str(card) for card in self._deck])
+        return str(self._deck[-1])
 
     def __len__(self):
         return len(self._deck)
+
+    def append(self, card: Card):
+        self._deck.append(card)
 
     def clear(self):
         self._deck = []

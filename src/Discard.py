@@ -15,11 +15,13 @@ class Discard:
     def pop(self) -> Card:
         return self._discard.pop()
 
-    def last(self) -> Card:
-        return self._discard[-1]
+    
     
     def clear(self):
         self._discard = []
+
+    def last(self) -> Card:
+        return self._discard[-1]
 
     def __str__(self):
         return str(self.last())
