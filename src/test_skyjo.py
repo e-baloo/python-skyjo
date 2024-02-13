@@ -1,10 +1,10 @@
 
 """ TODO  """
-from card import Card
-from card_value_enum import CardValueEnum
-from card_status_enum import CardStatusEnum
-from player_board import PlayerBoard
-from discard import Discard
+from cards.card import Card
+from cards.card_value_enum import CardValueEnum
+from cards.card_status_enum import CardStatusEnum
+from cards.player_board import PlayerBoard
+from cards.discard import Discard
 
 discard = Discard()
 discard.append(Card(CardValueEnum.ONE))

@@ -1,0 +1,8 @@
+{
+    "cSpell.words": [
+        "pygame"
+    ],
+    "pylint.args": [
+        "--extension-pkg-whitelist=pygame"
+    ]
+}

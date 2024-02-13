@@ -1,8 +1,8 @@
 """Module providing class PlayerBoard."""
 
-from card import Card
-from card_status_enum import CardStatusEnum
-from discard import Discard
+from cards.card import Card
+from cards.card_status_enum import CardStatusEnum
+from cards.discard import Discard
 
 
 class PlayerBoard:
@@ -135,6 +135,19 @@ class PlayerBoard:
                     return_skyjo = True
 
         return return_skyjo
+
+    def get_card(self, x, y) -> Card | None:
+        """
+        Get the card at the specified position on the board.
+
+        Args:
+            x (int): The x-coordinate of the card.
+            y (int): The y-coordinate of the card.
+
+        Returns:
+            Card: The card at the specified position on the board.
+        """
+        return self._board[x][y]
 
     def finish(self) -> bool:
         """

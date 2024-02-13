@@ -3,9 +3,9 @@ import random
 # from card import Card
 # from card_value_enum import CardValueEnum
 # from card_status_enum import CardStatusEnum
-from deck import Deck
-from player_board import PlayerBoard
-from discard import Discard
+from cards.deck import Deck
+from cards.player_board import PlayerBoard
+from cards.discard import Discard
 
 deck = Deck()
 discard = Discard()

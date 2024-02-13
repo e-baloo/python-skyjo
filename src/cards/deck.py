@@ -1,9 +1,9 @@
 """Module providing class Deck."""
 
 from random import shuffle
-from card import Card
-from card_value_enum import CardValueEnum
-from card_status_enum import CardStatusEnum
+from cards.card import Card
+from cards.card_value_enum import CardValueEnum
+from cards.card_status_enum import CardStatusEnum
 
 DISTRIBUTION = [
     [5, [CardValueEnum.NEGATIVE_TOW]],
@@ -57,3 +57,7 @@ class Deck:
     def count(self):
         """Return the number of cards in the deck."""
         return len(self._deck)
+
+    def get(self) -> Card:
+        """Return the last card in the deck."""
+        return self._deck[-1]

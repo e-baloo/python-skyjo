@@ -1,7 +1,7 @@
 """Module providing class Card."""
 
-from card_value_enum import CardValueEnum
-from card_status_enum import CardStatusEnum
+from cards.card_value_enum import CardValueEnum
+from cards.card_status_enum import CardStatusEnum
 
 
 class Card:
